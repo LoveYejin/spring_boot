@@ -35,11 +35,11 @@ Connection conn = null;
 PreparedStatement pstmt = null;
 ResultSet rs = null;
 
-Class.forName("com.mysql.jdbc.Driver");
+Class.forName("org.postgresql.Driver");
 
-String jdbcDriver = "jdbc:mysql://192.168.0.192:3326/test";
-String dbUser = "test01";
-String dbPass = "aei12@3$TE";
+String jdbcDriver = "jdbc:postgresql://ec2-107-22-192-11.compute-1.amazonaws.com:5432/d37nd8135gbtv1?sslmode=require";
+String dbUser = "bknuvzcktzakal";
+String dbPass = "c0a7b72496c991f02defe6062bf830a4d497fead3d056b5049d4eb0f5e755e04";
 
 conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 
@@ -90,13 +90,9 @@ Connection conn2 = null;
 PreparedStatement pstmt2 = null;
 ResultSet rs2 = null;
 
-Class.forName("com.mysql.jdbc.Driver");
 
-String jdbcDriver2 = "jdbc:mysql://192.168.0.192:3326/test";
-String dbUser2 = "test01";
-String dbPass2 = "aei12@3$TE";
 
-conn2 = DriverManager.getConnection(jdbcDriver2, dbUser2, dbPass2);
+conn2 = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
 pstmt2 = conn2.prepareStatement("select * from courses");
 rs2 = pstmt2.executeQuery();
 
